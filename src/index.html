@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Generador de Excusas</title>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+    <h1>Generador de Excusas</h1>
+    <button onclick="generarExcusa()">Generar Excusa</button>
+    <p id="excusa"></p>
+
+    <script>
+      function generarExcusa() {
+        let quien = ["El gato", "Mi amigo", "El panadero", "Mi loro"];
+        let accion = ["se comió", "pisó", "mojó", "rompió"];
+        let que = ["mi ordenador", "mi movil", "la moto"];
+        let cuando = [
+          "antes del trabajo",
+          "cuando estaba comiendo",
+          "mientras hacía deporte",
+          "durante mi cena",
+          "mientras me duchaba"
+        ];
+
+        const excusa = `${quien[Math.floor(Math.random() * quien.length)]} ${
+          accion[Math.floor(Math.random() * accion.length)]
+        } ${que[Math.floor(Math.random() * que.length)]} ${
+          cuando[Math.floor(Math.random() * cuando.length)]
+        }.`;
+
+        document.getElementById("excusa").textContent = excusa;
+      }
+    </script>
   </body>
 </html>
